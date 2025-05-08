@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .list{
+            display: flex;
+            /*讓下一層次水平排列*/
+         }
+        .item{
+            background-color: gray;
+            flex: none;
+            width: 280px;
+            margin: 10px;
+        }
+        .hamburger {
+            width: 30px;
+            cursor: pointer;
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 20px;
+            margin: 10px;
+        }
+        .hamburger div {
+            height: 4px;
+            background-color: black;
+            border-radius: 2px;
+        }
+        @media (max-width: 768px) {
+        .hamburger {
+            display: flex; /* 在小螢幕上顯示漢堡圖標 */
+        }
+        .desktop-menu {
+            display: none; /* 隱藏桌面選單 */
+        }
+    }
+        </style>
+</head>
+<body>
+    <div class="headline">這是一個回應是網頁設計,紙飛機</div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="desktop-menu">選項一、選項二、選項三、選項四、選項五、選項六</div>
+    <div class="mobil-menu">選項一、選項二、選項三、選項四、選項五、選項六</div>
+    <div class="mobil-menu">
+    </div>
+    <div class="list">
+        <div class="item"><img src="03.jpg" width="250px" height="160px"><br>我的</div>
+        <div class="item"><img src="09.jpg" width="250px" height="160px"><br>鄭卉敏</div>
+        <div class="item"><img src="46.jpg" width="250px" height="160px"><br>郭家妤</div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu=document.querySelector('.mobil-menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
